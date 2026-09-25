@@ -1,16 +1,71 @@
 [
   {
-    "category": "Your expertise",
+    "category": "Project & Product Management",
     "items": [
-      "Your skill",
-      "Another skill"
+      "Agile Methodology",
+      "Scrum",
+      "Jira",
+      "Confluence",
+      "Product Strategy",
+      "Product Management",
+      "Planning",
+      "Requirements Gathering",
+      "Stakeholder Management",
+      "Risk Management"
     ]
   },
   {
-    "category": "Tools you use",
+    "category": "Tools & Collaboration Platforms",
     "items": [
-      "Your favorite tool",
-      "Another tool"
+      "Asana",
+      "Trello",
+      "Notion",
+      "Miro",
+      "Microsoft Teams",
+      "Slack",
+      "MS-Excel",
+      "MS-Office",
+      "MS-PowerPoint",
+      "Google Docs",
+      "Google Forms",
+      "Google Sheets",
+      "Google Workspace"
+    ]
+  },
+  {
+    "category": "Technical & Design Skills",
+    "items": [
+      "Figma",
+      "Artificial Intelligence",
+      "Prompt Engineering",
+      "ChatGPT",
+      "Claude",
+      "Data Annotation",
+      "Research and Analytics"
+    ]
+  },
+  {
+    "category": "Professional & Interpersonal Skills",
+    "items": [
+      "Team Management",
+      "Collaboration",
+      "Analytical Thinking",
+      "Time Management",
+      "Effective Communication",
+      "Presentation Skills",
+      "Management",
+      "Interpersonal Skills",
+      "English Proficiency (Spoken)",
+      "English Proficiency (Written)"
+    ]
+  },
+  {
+    "category": "Marketing & Business Growth",
+    "items": [
+      "Social Media Marketing",
+      "Lead Generation",
+      "Community Management",
+      "Networking"
     ]
   }
 ]
