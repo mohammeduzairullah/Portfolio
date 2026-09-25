@@ -11,10 +11,10 @@
     "footerText": "All rights reserved."
   },
   "contact": {
-    "email": "",
-    "phone": "",
+    "email": "m.uzairullah.21@gmail.com",
+    "phone": "7842315445",
     "linkedin": "",
-    "github": "",
+    "github": "https://github.com/mohammeduzairullah",
     "introduction": "Introduce yourself and the opportunities you are interested in.",
     "invitation": "Add your contact details in the editor so visitors can get in touch."
   },
@@ -28,8 +28,8 @@
   },
   "emailjs": {
     "enabled": false,
-    "publicKey": "",
-    "serviceId": "",
-    "templateId": ""
+    "publicKey": "45pnnty5ZfPsjgzA_",
+    "serviceId": "service_f14bydq",
+    "templateId": "template_qtz6bz8"
   }
 }
