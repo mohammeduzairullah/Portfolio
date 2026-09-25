@@ -1,8 +1,9 @@
 {
-  "badge": "WELCOME TO MY PORTFOLIO",
+  "badge": "Safalta Setu's PM intern",
   "roles": [
-    "Your role or profession",
-    "Your area of expertise"
+    "Certified Scrum Master",
+    "Jira & Agile Specialist",
+    "Associate Project Manager (APM)"
   ],
-  "bio": "Share who you are, what you do, and the value you bring. Open the editor to replace this introduction with your own story."
+  "bio": "I bridge the gap between your technical development teams and structured project execution. As a Scrum Master and Agile Specialist with a background in Computer Science, I help tech startups and development teams streamline workflows, maintain tight project timelines, and clear delivery roadblocks. How I can help your team: Jira Management: Setting up boards, managing backlogs, and tracking sprint metrics. Sprint Facilitation: Running efficient daily standups, sprint planning, and retrospectives. Technical Alignment: Translating complex business requirements into clear developer tasks (tickets). Let’s chat about how we can get your development pipeline running like clockwork!"
 }
