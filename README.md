@@ -1,78 +1,57 @@
 # Portfolio Template Editable
 
-A one-page portfolio site for an aspiring **Project Coordinator** / future **IT Project Manager**, deployed on GitHub Pages. Content (hero, about, education, stats, skills, work experience, certifications) is data-driven and editable through a private admin portal — no code editing required for day-to-day updates.
+A GitHub Pages portfolio with a live browser editor. This example contains Mohammed Uzairullah’s portfolio; replace the sample details with your own through the editor.
 
-🌐 **GitHub Pages:** [Portfolio Template Editable](https://mohammeduzairullah.github.io/portfolio-template-editable/)
+## Make your own copy
 
----
+1. Choose **Use this template → Create a new repository** on GitHub.
+2. In your repository, choose **Settings → Pages → Deploy from a branch → main → / (root)** and save.
+3. Open your deployed site and choose **Edit portfolio** in the footer (or visit `admin.html` under your site URL).
+4. Check the GitHub username, repository and branch. GitHub Pages addresses are detected automatically; custom domains can be configured in the form.
+5. Create a fine-grained personal access token limited to your repository with **Contents: Read and write**. Enter it in the editor and connect. Never add the token to a file or commit it.
+6. Edit your profile, content, colors and photo. The preview changes immediately. Choose **Publish this section** for every section you edit. GitHub Pages deploys the saved changes automatically.
 
-## Key Features
+No code changes are required for normal personalization. The token is kept in the current browser tab’s session. **Disconnect** removes it. Repository details (without the token) are remembered in local storage. GitHub controls write access; opening the editor does not grant visitors permission to publish.
 
-- **Single-page layout** with smooth-scrolling nav and scrollspy (nav link highlights the section in view).
-- **Data-driven content** — hero text, About paragraphs, education, stats, skills, work experience, and certifications all live in `assets/data/*.json` and render client-side, instead of being hardcoded in HTML.
-- **Admin portal** (`admin.html`) — connect with a GitHub personal access token (stored only in your browser) and edit any of the sections above through forms; saving commits straight to this repo and the live site rebuilds automatically.
-- **Work Experience** section merges projects, internships, and jobs into one filterable list (dropdown by type), with support for multiple links per entry (e.g. a GitHub repo *and* a live deployed site).
-- **Certifications** section is a searchable grid of compact cards.
-- **Contact form** sends real email via [EmailJS](https://www.emailjs.com) (no backend required) instead of linking out to a form.
-- Scroll-reveal animations, tilt-on-hover cards, cursor glow (desktop only), a cycling role headline, and copy-to-clipboard buttons for email/phone.
-- Respects `prefers-reduced-motion`; degrades gracefully without JavaScript-dependent animation getting stuck.
+## Editor features
 
----
+- **Profile & settings:** name, logo initials, browser title, description, photo description, footer, email, phone, social links, contact text, section headings and EmailJS.
+- **Intro / About / Education / Stats / Skills / Experience / Certificates:** edit existing entries, add entries or remove them.
+- **Colors & photo:** light, dark or device theme; color presets and custom colors; photo upload and vertical positioning. Recommended photo: **800 × 800 px**, JPG, PNG or WebP, up to 10 MB. Photos are resized to fit within 800 × 800 px and shown in a circle.
+- **Live preview:** unpublished changes are visible only in your editor. You can try the editor without a token; publishing requires a connection.
+- **Reload from GitHub:** discards that section’s draft after confirmation. Save errors preserve the draft. If a file changes elsewhere, copy your edits before reloading.
 
-## Built With
+## EmailJS (optional)
 
-- **HTML5 + Tailwind CSS (via CDN)** — no build step.
-- **Vanilla JavaScript (ES6)** — content rendering, interactivity, and the admin portal's GitHub API calls, all with no framework or bundler.
-- **Google Fonts** — `Plus Jakarta Sans` (body) and `Playfair Display` (accents).
-- **EmailJS** — client-side email delivery for the contact form.
-- **GitHub REST API (Contents endpoint)** — used by the admin portal to read/write the JSON data files directly.
+The demo includes the original portfolio’s public EmailJS configuration. **Replace it with your own account settings or switch the contact form off before using your copy.** With the form off, visitors can use your email link.
 
----
+In **Profile & settings → Contact form · EmailJS**, enter your public key, service ID and template ID. Never enter an EmailJS private key or your GitHub token in these fields; site settings are public.
 
-## Project Structure
+Configure **To Email** in your EmailJS template as your inbox and **Reply-To** as `{{from_email}}`. The form supplies:
 
-```text
-├── index.html                    # Page shell; content sections are populated by assets/js/main.js
-├── admin.html                    # Private admin portal (not linked from the site, blocked in robots.txt)
-├── robots.txt                    # Keeps admin.html out of search engines
-├── assets/
-│   ├── css/style.css             # Theme, layout, animations
-│   ├── js/
-│   │   ├── main.js               # Fetches assets/data/*.json, renders sections, wires up interactivity
-│   │   └── admin.js              # Admin portal: GitHub token auth + per-section edit forms
-│   ├── data/
-│   │   ├── hero.json             # Badge line, cycling role headlines, bio paragraph
-│   │   ├── about.json            # About paragraphs + Quick Facts
-│   │   ├── education.json        # School, degree, field of study, years, status, grade
-│   │   ├── stats.json            # The stat counters under the hero
-│   │   ├── skills.json           # Skill categories and tags
-│   │   ├── experience.json       # Work experience entries (type: project/internship/experience)
-│   │   └── certifications.json   # Certification cards
-│   └── img/PIC.png               # Profile photo
-└── README.md
-```
+- `{{from_name}}`
+- `{{from_email}}`
+- `{{phone}}`
+- `{{reason}}`
+- `{{message}}`
 
----
+See [EmailJS template setup](https://www.emailjs.com/docs/tutorial/creating-email-template/) and [form field matching](https://www.emailjs.com/docs/sdk/send-form/). Preview mode never sends email.
 
-## Editing Content
+## Project layout
 
-Two ways to update the site:
+- `index.html`: public portfolio shell
+- `admin.html`: live editor and repository connection
+- `assets/data/site.json`: identity, contacts, headings and EmailJS public settings
+- `assets/data/appearance.json`: theme, colors and profile photo
+- Other `assets/data/*.json`: content sections
+- `assets/js/site.js`, `appearance.js`, `main.js`: public site rendering
+- `assets/js/admin.js`, `settings-editor.js`, `customizer.js`: editing and GitHub saves
+- `assets/css/style.css`, `editor.css`: portfolio and editor styles
 
-1. **Admin portal (recommended for content):** open `admin.html` under the deployed site's path, paste a GitHub fine-grained personal access token scoped to only this repo with **Contents: Read and write**, and use the Hero / About / Education / Stats / Skills / Experience / Certifications tabs. Saving commits directly to `main`; GitHub Pages rebuilds automatically.
-2. **Direct edits:** the `assets/data/*.json` files can be hand-edited and committed like any other file, and `index.html`/`assets/css/style.css`/`assets/js/main.js` for structural or design changes.
+Uses HTML, CSS, vanilla JavaScript, Tailwind CDN, GitHub’s Contents API and optional EmailJS. No build step or application server is needed. Search metadata is updated by JavaScript; previews from services that do not execute JavaScript may use the initial HTML metadata.
 
-The admin token is stored only in that browser's `localStorage` and is used solely for direct calls to GitHub's API — it's never embedded in any committed file.
+## Local verification
 
----
+Requires Node.js. Run `node --test tests/editor.test.cjs` for connection, publishing, conflict, network failure, Unicode and settings validation tests.
 
-## Customizing Appearance
-
-Open `admin.html`, connect to GitHub, and choose **Customize appearance**. Choose Light, Dark, or Follow device; pick a color preset or change the three colors individually. Upload a profile photo and adjust its vertical position in the circular preview. Recommended photo size: **800 × 800 px**; JPG, PNG, or WebP up to 10 MB. Uploaded photos are resized to fit within 800 × 800 px.
-
-Changes preview immediately. **Cancel**, the close button, or Escape restores the saved appearance. **Reset appearance** previews the original colors and photo; save to publish that reset. **Save to GitHub** writes colors, theme, and the resized photo together to `assets/data/appearance.json`. GitHub Pages shows the changes after its deployment finishes. No separate image upload or build tooling is needed.
-
-When sharing a copy with friends, set `GH_OWNER`, `GH_REPO`, and `GH_BRANCH` at the top of `assets/js/admin.js` to their repository. They must also replace personal content and configure their own EmailJS account below.
-
-## Contact Form Setup
-
-The contact form uses EmailJS. Credentials live in `assets/js/main.js` (`EMAILJS_PUBLIC_KEY`, `EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID`) — the public key is meant to be client-side, same model as a Stripe publishable key.
+Run `node tests/server.cjs`, then open `http://127.0.0.1:4173/admin.html` for local preview. The isolated test editor at `/__test__/admin.html` simulates GitHub using the fake token `test-token`. Its saves stay in memory and never reach GitHub. Restarting the server clears test data. Visiting `/__mock__/fail-next-save` makes the next simulated save return a conflict for testing draft recovery.

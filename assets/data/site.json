@@ -1,0 +1,16 @@
+{
+  "identity": {
+    "firstName": "Mohammed", "lastName": "Uzairullah", "initials": "MU.",
+    "title": "Mohammed Uzairullah — Portfolio",
+    "description": "Mohammed Uzairullah — aspiring Project Coordinator and future IT Project Manager. Agile, Scrum, Jira, and project lifecycle management.",
+    "photoAlt": "Mohammed Uzairullah profile photo", "copyrightName": "", "copyrightYear": "", "footerText": "All rights reserved."
+  },
+  "contact": {
+    "email": "m.uzairullah.21@gmail.com", "phone": "+91 7842315445",
+    "linkedin": "https://www.linkedin.com/in/mohammed-uzairullah-725143413/", "github": "https://github.com/mohammeduzairullah",
+    "introduction": "I am actively seeking opportunities to grow as a Project Coordinator and future IT Project Manager. If you're looking for someone who is eager to learn, organized, and passionate about Agile project management, I'd be glad to connect and collaborate.",
+    "invitation": "Feel free to reach out regarding internships, project collaborations, or networking opportunities."
+  },
+  "headings": { "about": "Turning Complexity into Clarity", "education": "Education", "skills": "Tools & Technologies", "experience": "Work Experience", "certifications": "Certifications & Training", "contact": "Let's Build Something Great Together" },
+  "emailjs": { "enabled": true, "publicKey": "45pnnty5ZfPsjgzA_", "serviceId": "service_f14bydq", "templateId": "template_od5ehqc" }
+}

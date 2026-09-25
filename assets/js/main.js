@@ -100,7 +100,7 @@ function renderExperience(list) {
             ${item.tags || links.length ? `
             <div class="flex flex-wrap gap-4 items-center">
                 ${item.tags ? `<span class="text-xs font-semibold text-indigo-500 tracking-wider uppercase">${escapeHtml(item.tags)}</span>` : ''}
-                ${links.length ? `<div class="flex flex-wrap gap-3 ml-auto">${links.map(l => `<a href="${escapeHtml(l.url)}" target="_blank" rel="noopener" class="text-xs text-slate-900 underline hover:text-indigo-600">${escapeHtml(l.label || 'View')} ↗</a>`).join('')}</div>` : ''}
+                ${links.length ? `<div class="flex flex-wrap gap-3 ml-auto">${links.map(l => `<a href="${escapeHtml(PortfolioSite.safeURL(l.url))}" target="_blank" rel="noopener" class="text-xs text-slate-900 underline hover:text-indigo-600">${escapeHtml(l.label || 'View')} ↗</a>`).join('')}</div>` : ''}
             </div>` : ''}
         </div>`;
     }).join('');
@@ -114,7 +114,7 @@ function renderCertifications(list) {
             <div class="flex-1 flex items-center justify-center"><p class="text-[11px] font-semibold text-slate-900 leading-snug">${escapeHtml(c.title)}</p></div>
             <div>
                 <p class="text-[8px] text-slate-400 mb-1 truncate">${escapeHtml(c.issuer)}${c.certId ? ' · ID ' + escapeHtml(c.certId) : ''}</p>
-                ${c.link ? `<a href="${escapeHtml(c.link)}" target="_blank" rel="noopener" class="text-[8px] font-bold uppercase tracking-wide text-indigo-600 hover:underline">View ↗</a>` : ''}
+                ${c.link ? `<a href="${escapeHtml(PortfolioSite.safeURL(c.link))}" target="_blank" rel="noopener" class="text-[8px] font-bold uppercase tracking-wide text-indigo-600 hover:underline">View ↗</a>` : ''}
             </div>
         </div>
     `).join('');
@@ -233,7 +233,7 @@ function initInteractions() {
     if (roleEl) {
         let roles = [];
         try { roles = JSON.parse(roleEl.getAttribute('data-roles')); } catch (e) { roles = []; }
-        if (roles.length > 1) {
+        if (roles.length > 1 && !new URLSearchParams(location.search).has('preview')) {
             let i = 0;
             setInterval(() => {
                 roleEl.classList.add('fade');
@@ -270,10 +270,10 @@ function initInteractions() {
     /* ---------- Certificate search filter ---------- */
     const certSearch = document.getElementById('cert-search');
     if (certSearch) {
-        const items = document.querySelectorAll('[data-cert-item]');
+
         certSearch.addEventListener('input', () => {
             const q = certSearch.value.trim().toLowerCase();
-            items.forEach(item => {
+            document.querySelectorAll('[data-cert-item]').forEach(item => {
                 const match = item.textContent.toLowerCase().includes(q);
                 item.style.display = match ? '' : 'none';
             });
@@ -283,10 +283,10 @@ function initInteractions() {
     /* ---------- Work experience type filter ---------- */
     const expFilter = document.getElementById('exp-filter');
     if (expFilter) {
-        const cards = document.querySelectorAll('[data-exp-type]');
+
         expFilter.addEventListener('change', () => {
             const val = expFilter.value;
-            cards.forEach(card => {
+            document.querySelectorAll('[data-exp-type]').forEach(card => {
                 const match = val === 'all' || card.getAttribute('data-exp-type') === val;
                 card.style.display = match ? '' : 'none';
             });
@@ -294,31 +294,22 @@ function initInteractions() {
     }
 
     /* ---------- EmailJS contact form ---------- */
-    const EMAILJS_PUBLIC_KEY = '45pnnty5ZfPsjgzA_';
-    const EMAILJS_SERVICE_ID = 'service_f14bydq';
-    const EMAILJS_TEMPLATE_ID = 'template_od5ehqc';
-
     const contactForm = document.getElementById('contact-form');
-    if (contactForm && window.emailjs) {
-        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalLabel = submitBtn.textContent;
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
-                .then(() => {
-                    showToast('Message sent — thank you!');
-                    contactForm.reset();
-                })
-                .catch(() => {
-                    showToast('Something went wrong — please email me directly.');
-                })
-                .finally(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = originalLabel;
-                });
+    if (contactForm) {
+        contactForm.addEventListener('submit', async event => {
+            event.preventDefault();
+            if (new URLSearchParams(location.search).has('preview')) { showToast('Preview only — no email sent.'); return; }
+            const config = PortfolioSite.current.emailjs;
+            if (!config.enabled || !config.publicKey || !config.serviceId || !config.templateId || !window.emailjs) { showToast('Please use the contact links instead.'); return; }
+            const button = contactForm.querySelector('button[type="submit"]');
+            button.disabled = true;
+            button.textContent = 'Sending…';
+            try {
+                await emailjs.sendForm(config.serviceId, config.templateId, contactForm, { publicKey: config.publicKey });
+                showToast('Message sent — thank you!');
+                contactForm.reset();
+            } catch { showToast('Message could not be sent. Please use the contact links.'); }
+            finally { button.disabled = false; button.textContent = 'Send Message'; }
         });
     }
 
@@ -341,6 +332,24 @@ function initInteractions() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    await loadContent();
+    await Promise.all([loadContent(), PortfolioSite.ready, PortfolioAppearance.ready]);
     initInteractions();
+    if (new URLSearchParams(location.search).has('preview') && window.parent !== window) {
+        document.getElementById('edit-portfolio').hidden = true;
+        const rendered = {};
+        window.addEventListener('message', event => {
+            if (event.origin !== location.origin || event.source !== window.parent || event.data?.type !== 'portfolio-preview') return;
+            const data = event.data.content || {};
+            const renderers = { hero: renderHero, about: renderAbout, education: renderEducation, stats: renderStats, skills: renderSkills, experience: renderExperience, certifications: renderCertifications };
+            for (const [key, render] of Object.entries(renderers)) {
+                const fingerprint = JSON.stringify(data[key]);
+                if (data[key] && rendered[key] !== fingerprint) { render(data[key]); rendered[key] = fingerprint; }
+            }
+            if (data.site) PortfolioSite.apply(data.site);
+            if (data.appearance) PortfolioAppearance.apply(data.appearance);
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
+            if (event.data.section) document.getElementById(event.data.section)?.scrollIntoView({ behavior: 'instant', block: 'start' });
+        });
+        window.parent.postMessage({ type: 'portfolio-preview-ready' }, location.origin);
+    }
 });

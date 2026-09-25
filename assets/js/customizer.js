@@ -37,7 +37,8 @@
     find('customizer-close').onclick = close;
     find('appearance-cancel').onclick = close;
     document.getElementById('customize-portfolio').onclick = async () => {
-        saved = await appearance.ready;
+        await appearance.ready;
+        saved = { ...appearance.current };
         draft = { ...saved };
         busy = true;
         fields.disabled = true;
@@ -48,7 +49,8 @@
         dialog.showModal();
         document.body.classList.add('customizer-open');
         try {
-            const response = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${path}?ref=${GH_BRANCH}`, { headers: ghHeaders() });
+            if (previewOnly) { sha = undefined; draft = { ...saved }; refresh(); fields.disabled = false; status.textContent = 'Preview mode. Connect to GitHub to publish your appearance.'; return; }
+            const response = await fetch(ghFileURL(path) + '?ref=' + encodeURIComponent(GH_BRANCH), { headers: ghHeaders() });
             if (response.status === 404) { sha = undefined; }
             else {
                 if (!response.ok) throw new Error(`Couldn't load appearance (${response.status}). Close and try again.`);

@@ -24,11 +24,12 @@ window.PortfolioAppearance = (() => {
             img.src = current.photo;
             img.style.objectPosition = `50% ${current.photoPosition}%`;
         });
+        window.dispatchEvent(new CustomEvent('portfolio-appearance-change'));
     }
     media.addEventListener('change', () => apply(current));
     const ready = fetch('assets/data/appearance.json', { cache: 'no-cache' })
         .then(response => { if (!response.ok) throw new Error('Appearance unavailable'); return response.json(); })
         .then(value => { apply(value); return normalize(value); })
         .catch(() => { apply(defaults); return { ...defaults }; });
-    return { defaults, normalize, apply, ready };
+    return { defaults, normalize, apply, ready, get current() { return current; } };
 })();

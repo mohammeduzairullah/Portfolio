@@ -19,7 +19,7 @@
 
     <!-- NAVBAR -->
     <header class="navbar fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b border-slate-900/5 px-6 py-4 flex justify-between items-center">
-        <a href="#" class="text-xl font-bold tracking-widest gradient-text">MU.</a>
+        <a href="#" class="text-xl font-bold tracking-widest gradient-text" data-site-text="identity.initials">MU.</a>
         <nav class="hidden md:flex space-x-8 text-xs font-semibold tracking-widest uppercase text-slate-500">
             <a href="#about" class="nav-link hover:text-indigo-600 transition">About</a>
             <a href="#education" class="nav-link hover:text-indigo-600 transition">Education</a>
@@ -46,14 +46,14 @@
     <main class="pt-20">
 
         <!-- HERO -->
-        <section class="min-h-[92vh] flex items-center px-6 md:px-24 pb-16 border-b border-slate-900/5">
+        <section id="hero" class="min-h-[92vh] flex items-center px-6 md:px-24 pb-16 border-b border-slate-900/5">
             <div class="grid md:grid-cols-2 gap-12 items-center w-full">
 
                 <div class="reveal">
                     <p id="hero-badge" class="text-xs font-bold tracking-widest uppercase text-indigo-500 mb-3"></p>
 
                     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-4">
-                        Mohammed<br><span class="gradient-text">Uzairullah</span>
+                        <span data-site-text="identity.firstName">Mohammed</span><br><span class="gradient-text" data-site-text="identity.lastName">Uzairullah</span>
                     </h1>
                     <p id="role-cycle" class="text-xs md:text-sm font-semibold tracking-widest uppercase text-slate-500 mb-8"></p>
 
@@ -82,7 +82,7 @@
         <!-- ABOUT -->
         <section id="about" class="py-24 px-6 md:px-24 border-b border-slate-900/5">
             <span class="text-xs font-bold tracking-widest text-indigo-500 uppercase block mb-2 reveal">[ ABOUT ME ]</span>
-            <h2 class="text-3xl md:text-4xl serif-title italic text-slate-900 mb-8 reveal">Turning Complexity into Clarity</h2>
+            <h2 data-site-text="headings.about" class="text-3xl md:text-4xl serif-title italic text-slate-900 mb-8 reveal">Turning Complexity into Clarity</h2>
             <div class="grid md:grid-cols-3 gap-12">
                 <div id="about-paragraphs" class="md:col-span-2 text-slate-600 leading-relaxed space-y-4 reveal"></div>
                 <div class="card p-6 rounded-xl reveal">
@@ -95,7 +95,7 @@
         <!-- EDUCATION -->
         <section id="education" class="py-24 px-6 md:px-24 border-b border-slate-900/5 bg-[var(--bg-soft)]">
             <span class="text-xs font-bold tracking-widest text-indigo-500 uppercase block mb-2 reveal">[ ACADEMICS ]</span>
-            <h2 class="text-3xl md:text-4xl serif-title italic text-slate-900 mb-12 reveal">Education</h2>
+            <h2 data-site-text="headings.education" class="text-3xl md:text-4xl serif-title italic text-slate-900 mb-12 reveal">Education</h2>
 
             <div id="education-container" class="grid md:grid-cols-2 gap-8"></div>
         </section>
@@ -103,7 +103,7 @@
         <!-- SKILLS -->
         <section id="skills" class="py-24 px-6 md:px-24 border-b border-slate-900/5 bg-[var(--bg-soft)]">
             <span class="text-xs font-bold tracking-widest text-indigo-500 uppercase block mb-2 reveal">[ TECHNICAL EXPERTISE ]</span>
-            <h2 class="text-3xl md:text-4xl serif-title italic text-slate-900 mb-12 reveal">Tools &amp; Technologies</h2>
+            <h2 data-site-text="headings.skills" class="text-3xl md:text-4xl serif-title italic text-slate-900 mb-12 reveal">Tools &amp; Technologies</h2>
 
             <div id="skills-container" class="grid md:grid-cols-2 gap-10 max-w-4xl"></div>
         </section>
@@ -111,7 +111,7 @@
         <!-- WORK EXPERIENCE -->
         <section id="experience" class="py-24 px-6 md:px-24 border-b border-slate-900/5">
             <span class="text-xs font-bold tracking-widest text-indigo-500 uppercase block mb-2 reveal">[ CAREER JOURNEY ]</span>
-            <h2 class="text-3xl md:text-4xl serif-title italic text-slate-900 mb-8 reveal">Work Experience</h2>
+            <h2 data-site-text="headings.experience" class="text-3xl md:text-4xl serif-title italic text-slate-900 mb-8 reveal">Work Experience</h2>
 
             <div class="max-w-xs mb-10 reveal">
                 <select id="exp-filter" class="search-input w-full px-4 py-2.5 rounded-lg text-sm">
@@ -128,7 +128,7 @@
         <!-- CERTIFICATIONS -->
         <section id="certifications" class="py-24 px-6 md:px-24 border-b border-slate-900/5 bg-[var(--bg-soft)]">
             <span class="text-xs font-bold tracking-widest text-indigo-500 uppercase block mb-2 reveal">[ ACHIEVEMENTS ]</span>
-            <h2 class="text-3xl md:text-4xl serif-title italic text-slate-900 mb-6 reveal">Certifications &amp; Training</h2>
+            <h2 data-site-text="headings.certifications" class="text-3xl md:text-4xl serif-title italic text-slate-900 mb-6 reveal">Certifications &amp; Training</h2>
 
             <div class="max-w-sm mb-10 reveal">
                 <input id="cert-search" type="text" placeholder="Search certifications..." class="search-input w-full px-4 py-2.5 rounded-lg text-sm">
@@ -140,22 +140,22 @@
         <!-- CONTACT -->
         <section id="contact" class="py-24 px-6 md:px-24">
             <span class="text-xs font-bold tracking-widest text-indigo-500 uppercase block mb-2 reveal">[ LET'S CONNECT ]</span>
-            <h2 class="text-3xl md:text-4xl serif-title italic text-slate-900 mb-12 reveal">Let's Build Something Great Together</h2>
+            <h2 data-site-text="headings.contact" class="text-3xl md:text-4xl serif-title italic text-slate-900 mb-12 reveal">Let's Build Something Great Together</h2>
 
             <div class="grid md:grid-cols-2 gap-12">
                 <div class="space-y-6 reveal">
-                    <p class="text-slate-600 max-w-sm">I am actively seeking opportunities to grow as a Project Coordinator and future IT Project Manager. If you're looking for someone who is eager to learn, organized, and passionate about Agile project management, I'd be glad to connect and collaborate.</p>
-                    <p class="text-slate-600 max-w-sm">Feel free to reach out regarding internships, project collaborations, or networking opportunities.</p>
+                    <p class="text-slate-600 max-w-sm" data-site-text="contact.introduction"></p>
+                    <p class="text-slate-600 max-w-sm" data-site-text="contact.invitation"></p>
 
                     <div class="space-y-3">
-                        <div class="flex items-center gap-2 text-sm">
+                        <div data-contact-row="email" class="flex items-center gap-2 text-sm">
                             <strong class="text-slate-500">Email:</strong>
                             <a href="mailto:m.uzairullah.21@gmail.com" class="text-indigo-600 hover:underline">m.uzairullah.21@gmail.com</a>
                             <button data-copy="m.uzairullah.21@gmail.com" class="btn-outline text-[10px] px-2 py-1 rounded-md ml-1" aria-label="Copy email">Copy</button>
                         </div>
-                        <p class="text-sm"><strong class="text-slate-500">LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohammed-uzairullah-725143413/" target="_blank" rel="noopener" class="text-indigo-600 hover:underline ml-2">mohammed-uzairullah-725143413 ↗</a></p>
-                        <p class="text-sm"><strong class="text-slate-500">GitHub:</strong> <a href="https://github.com/mohammeduzairullah" target="_blank" rel="noopener" class="text-indigo-600 hover:underline ml-2">mohammeduzairullah ↗</a></p>
-                        <div class="flex items-center gap-2 text-sm">
+                        <p data-contact-row="linkedin" class="text-sm"><strong class="text-slate-500">LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohammed-uzairullah-725143413/" target="_blank" rel="noopener" class="text-indigo-600 hover:underline ml-2">mohammed-uzairullah-725143413 ↗</a></p>
+                        <p data-contact-row="github" class="text-sm"><strong class="text-slate-500">GitHub:</strong> <a href="https://github.com/mohammeduzairullah" target="_blank" rel="noopener" class="text-indigo-600 hover:underline ml-2">mohammeduzairullah ↗</a></p>
+                        <div data-contact-row="phone" class="flex items-center gap-2 text-sm">
                             <strong class="text-slate-500">Phone:</strong>
                             <a href="tel:+917842315445" class="text-indigo-600 hover:underline">+91 7842315445</a>
                             <button data-copy="+917842315445" class="btn-outline text-[10px] px-2 py-1 rounded-md ml-1" aria-label="Copy phone number">Copy</button>
@@ -163,7 +163,7 @@
                     </div>
                 </div>
 
-                <form id="contact-form" class="space-y-4 reveal">
+                <p id="contact-fallback" class="text-slate-500" hidden></p><form id="contact-form" class="space-y-4 reveal">
                     <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Send a direct message</label>
                     <div>
                         <input type="text" name="from_name" required placeholder="Your name" class="search-input w-full px-4 py-2.5 rounded-lg text-sm">
@@ -197,7 +197,8 @@
 
     <!-- FOOTER -->
     <footer class="py-8 text-center text-xs text-slate-500 border-t border-slate-900/5">
-        <p>&copy; 2026 Mohammed Uzairullah. All rights reserved.</p>
+        <p id="copyright">&copy; 2026 Mohammed Uzairullah. All rights reserved.</p>
+        <a id="edit-portfolio" href="admin.html" class="edit-portfolio-link">Edit portfolio ↗</a>
     </footer>
 
     <div id="back-to-top" class="back-to-top" aria-label="Back to top">
@@ -206,6 +207,7 @@
     <div id="toast" class="toast"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/js/site.js"></script>
     <script src="assets/js/appearance.js"></script>
     <script src="assets/js/main.js"></script>
 </body>

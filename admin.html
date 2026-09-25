@@ -4,75 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Admin — Mohammed Uzairullah Portfolio</title>
-
+    <title>Edit your portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        .tab-btn { transition: background .2s ease, color .2s ease, border-color .2s ease; }
-        .tab-btn.active { background: var(--gradient); color: #fff; border-color: transparent; }
-        .field-label { display:block; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color: var(--text-muted); margin-bottom:4px; }
-        .entry-card { border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 16px; background: var(--surface); }
-    </style>
+    <link rel="stylesheet" href="assets/css/editor.css">
 </head>
-<body>
-
-    <div class="bg-blobs"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
-
-    <header class="navbar fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b border-slate-900/5 px-6 py-4 flex justify-between items-center">
-        <a href="index.html" class="text-xl font-bold tracking-widest gradient-text">MU.</a>
-        <p class="text-xs font-semibold tracking-widest uppercase text-slate-500">Admin Portal</p>
-    </header>
-
-    <main class="pt-28 pb-24 px-6 max-w-4xl mx-auto">
-
-        <section id="token-section" class="card p-6 rounded-xl mb-8">
-            <h2 class="text-lg font-bold text-slate-900 mb-2">Connect to GitHub</h2>
-            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
-                Paste a GitHub <strong>fine-grained personal access token</strong>, scoped to only this repository with
-                <strong>Contents: Read and write</strong> permission. It's saved only in this browser's local storage —
-                never sent anywhere except directly to GitHub's API. Don't use this page on a shared computer while
-                your token is saved, and revoke the token from GitHub any time you want to cut off access.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-2">
-                <input id="gh-token-input" type="password" placeholder="github_pat_..." class="search-input flex-1 px-4 py-2.5 rounded-lg text-sm">
-                <button id="gh-token-connect" class="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold">Connect</button>
-                <button id="gh-token-clear" class="btn-outline px-5 py-2.5 rounded-lg text-sm font-semibold">Forget Token</button>
-            </div>
-            <p id="gh-token-status" class="text-xs mt-3 text-slate-500"></p>
-        </section>
-
-        <section id="admin-panels" class="hidden">
-            <button id="customize-portfolio" type="button" class="btn-primary px-5 py-3 rounded-lg mb-6 font-semibold">Customize appearance</button>
-            <div class="flex gap-2 mb-8 flex-wrap" id="admin-tabs">
-                <button data-tab="hero" class="tab-btn active btn-outline px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide">Hero</button>
-                <button data-tab="about" class="tab-btn btn-outline px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide">About</button>
-                <button data-tab="education" class="tab-btn btn-outline px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide">Education</button>
-                <button data-tab="stats" class="tab-btn btn-outline px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide">Stats</button>
-                <button data-tab="skills" class="tab-btn btn-outline px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide">Skills</button>
-                <button data-tab="experience" class="tab-btn btn-outline px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide">Experience</button>
-                <button data-tab="certifications" class="tab-btn btn-outline px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide">Certifications</button>
-            </div>
-
-            <div id="tab-hero" class="tab-panel"></div>
-            <div id="tab-about" class="tab-panel hidden"></div>
-            <div id="tab-education" class="tab-panel hidden"></div>
-            <div id="tab-stats" class="tab-panel hidden"></div>
-            <div id="tab-skills" class="tab-panel hidden"></div>
-            <div id="tab-experience" class="tab-panel hidden"></div>
-            <div id="tab-certifications" class="tab-panel hidden"></div>
-        </section>
-
+<body class="editor-page">
+    <header class="editor-header"><a href="index.html" class="editor-brand">Portfolio <span>studio</span></a><a href="index.html" target="_blank" rel="noopener" class="btn-outline">View live site ↗</a></header>
+    <main class="editor-main">
+        <div class="editor-intro"><p class="customizer-eyebrow">YOUR SITE, YOUR WAY</p><h1>Edit your portfolio.</h1><p>Make changes, watch the preview, then publish when you’re ready.</p></div>
+        <details id="token-section" class="connection-card" open>
+            <summary>GitHub connection <span id="connection-summary">Set up once in this browser</span></summary>
+            <form id="connection-form">
+                <fieldset id="connection-fields">
+                    <p class="connection-help">Use your own repository. On GitHub Pages, the username and repository are filled in automatically. Create a fine-grained token for that repository with <strong>Contents: Read and write</strong>. Your token stays in this browser tab’s session and is sent only to GitHub.</p>
+                    <div class="connection-grid">
+                        <label>GitHub username or organization<input id="gh-owner" required autocomplete="off" placeholder="your-username"></label>
+                        <label>Repository name<input id="gh-repo" required autocomplete="off" placeholder="my-portfolio"></label>
+                        <label>Branch<input id="gh-branch" required value="main" autocomplete="off"></label>
+                        <label>GitHub personal access token<input id="gh-token-input" required type="password" autocomplete="off" placeholder="github_pat_..."></label>
+                    </div>
+                    <div class="connection-actions"><button id="gh-token-connect" class="btn-primary" type="submit">Connect to edit</button><button id="gh-token-clear" class="btn-outline" type="button">Disconnect</button><button id="try-editor" class="btn-outline" type="button">Try the editor without connecting</button></div>
+                </fieldset>
+                <p id="gh-token-status" role="status" aria-live="polite"></p>
+            </form>
+        </details>
+        <div id="editor-workspace" class="editor-workspace hidden">
+            <section id="admin-panels" class="editor-controls hidden" aria-label="Portfolio settings">
+                <div class="editor-controls-heading"><h2>Your content</h2><button id="customize-portfolio" class="btn-outline" type="button">Colors & photo</button></div>
+                <div id="admin-tabs" class="editor-tabs" aria-label="Choose a section">
+                    <button data-tab="site" class="tab-btn active" aria-pressed="true">Profile & settings</button>
+                    <button data-tab="hero" class="tab-btn" aria-pressed="false">Intro</button>
+                    <button data-tab="about" class="tab-btn" aria-pressed="false">About</button>
+                    <button data-tab="education" class="tab-btn" aria-pressed="false">Education</button>
+                    <button data-tab="stats" class="tab-btn" aria-pressed="false">Stats</button>
+                    <button data-tab="skills" class="tab-btn" aria-pressed="false">Skills</button>
+                    <button data-tab="experience" class="tab-btn" aria-pressed="false">Experience</button>
+                    <button data-tab="certifications" class="tab-btn" aria-pressed="false">Certificates</button>
+                </div>
+                <div id="tab-site" class="tab-panel"></div>
+                <div id="tab-hero" class="tab-panel hidden"></div>
+                <div id="tab-about" class="tab-panel hidden"></div>
+                <div id="tab-education" class="tab-panel hidden"></div>
+                <div id="tab-stats" class="tab-panel hidden"></div>
+                <div id="tab-skills" class="tab-panel hidden"></div>
+                <div id="tab-experience" class="tab-panel hidden"></div>
+                <div id="tab-certifications" class="tab-panel hidden"></div>
+            </section>
+            <aside class="editor-preview-panel" aria-label="Live preview">
+                <div class="preview-toolbar"><div><h2>Live preview</h2><p>Only you see unpublished changes.</p></div><label class="sr-only" for="preview-size">Preview size</label><select id="preview-size"><option value="desktop">Desktop</option><option value="phone">Phone</option></select></div>
+                <div class="preview-frame-wrap"><iframe id="portfolio-preview" src="index.html?preview=1" title="Preview of your portfolio" sandbox="allow-scripts allow-same-origin"></iframe></div>
+                <p id="draft-status" role="status"></p>
+                <p id="publish-status" role="status" aria-live="polite">Publish saves to GitHub. Your live site updates after GitHub Pages finishes deploying.</p>
+            </aside>
+        </div>
     </main>
-
-    <div id="toast" class="toast"></div>
-
+    <div id="toast" class="toast" role="status"></div>
+    <script src="assets/js/site.js"></script>
     <script src="assets/js/appearance.js"></script>
     <script src="assets/js/admin.js"></script>
+    <script src="assets/js/settings-editor.js"></script>
     <script src="assets/js/customizer.js"></script>
 </body>
 </html>
