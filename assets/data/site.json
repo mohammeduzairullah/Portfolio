@@ -27,7 +27,7 @@
     "contact": "Let’s work together"
   },
   "emailjs": {
-    "enabled": false,
+    "enabled": true,
     "publicKey": "45pnnty5ZfPsjgzA_",
     "serviceId": "service_f14bydq",
     "templateId": "template_qtz6bz8"
