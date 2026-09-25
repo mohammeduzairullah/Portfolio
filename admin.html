@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin — Mohammed Uzairullah Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .tab-btn { transition: background .2s ease, color .2s ease, border-color .2s ease; }
+        .tab-btn.active { background: var(--gradient); color: #fff; border-color: transparent; }
+        .field-label { display:block; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color: var(--text-muted); margin-bottom:4px; }
+        .entry-card { border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 16px; background: var(--surface); }
+    </style>
+</head>
+<body>
+
+    <div class="bg-blobs"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
+
+    <header class="navbar fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b border-slate-900/5 px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-bold tracking-widest gradient-text">MU.</a>
+        <p class="text-xs font-semibold tracking-widest uppercase text-slate-500">Admin Portal</p>
+    </header>
+
+    <main class="pt-28 pb-24 px-6 max-w-4xl mx-auto">
+
+        <section id="token-section" class="card p-6 rounded-xl mb-8">
+            <h2 class="text-lg font-bold text-slate-900 mb-2">Connect to GitHub</h2>
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                Paste a GitHub <strong>fine-grained personal access token</strong>, scoped to only this repository with
+                <strong>Contents: Read and write</strong> permission. It's saved only in this browser's local storage —
+                never sent anywhere except directly to GitHub's API. Don't use this page on a shared computer while
+                your token is saved, and revoke the token from GitHub any time you want to cut off access.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <input id="gh-token-input" type="password" placeholder="github_pat_..." class="search-input flex-1 px-4 py-2.5 rounded-lg text-sm">
+                <button id="gh-token-connect" class="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold">Connect</button>
+                <button id="gh-token-clear" class="btn-outline px-5 py-2.5 rounded-lg text-sm font-semibold">Forget Token</button>
+            </div>
+            <p id="gh-token-status" class="text-xs mt-3 text-slate-500"></p>
+        </section>
+
+        <section id="admin-panels" class="hidden">
+            <button id="customize-portfolio" type="button" class="btn-primary px-5 py-3 rounded-lg mb-6 font-semibold">Customize appearance</button>
+            <div class="flex gap-2 mb-8 flex-wrap" id="admin-tabs">
+                <button data-tab="hero" class="tab-btn active btn-outline px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide">Hero</button>
+                <button data-tab="about" class="tab-btn btn-outline px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide">About</button>
+                <button data-tab="education" class="tab-btn btn-outline px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide">Education</button>
+                <button data-tab="stats" class="tab-btn btn-outline px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide">Stats</button>
+                <button data-tab="skills" class="tab-btn btn-outline px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide">Skills</button>
+                <button data-tab="experience" class="tab-btn btn-outline px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide">Experience</button>
+                <button data-tab="certifications" class="tab-btn btn-outline px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wide">Certifications</button>
+            </div>
+
+            <div id="tab-hero" class="tab-panel"></div>
+            <div id="tab-about" class="tab-panel hidden"></div>
+            <div id="tab-education" class="tab-panel hidden"></div>
+            <div id="tab-stats" class="tab-panel hidden"></div>
+            <div id="tab-skills" class="tab-panel hidden"></div>
+            <div id="tab-experience" class="tab-panel hidden"></div>
+            <div id="tab-certifications" class="tab-panel hidden"></div>
+        </section>
+
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="assets/js/appearance.js"></script>
+    <script src="assets/js/admin.js"></script>
+    <script src="assets/js/customizer.js"></script>
+</body>
+</html>
