@@ -1,6 +1,6 @@
 # Portfolio Template Editable
 
-A GitHub Pages portfolio with a live browser editor. This example contains Mohammed Uzairullah’s portfolio; replace the sample details with your own through the editor.
+A GitHub Pages portfolio with a live browser editor. It starts with neutral example content and a placeholder avatar. Replace the examples with your own details through the editor.
 
 ## Make your own copy
 
@@ -23,7 +23,7 @@ No code changes are required for normal personalization. The token is kept in th
 
 ## EmailJS (optional)
 
-The demo includes the original portfolio’s public EmailJS configuration. **Replace it with your own account settings or switch the contact form off before using your copy.** With the form off, visitors can use your email link.
+The contact form starts **disabled**, with no EmailJS account configured. Add your own EmailJS settings and enable it in the editor if you want a contact form. Otherwise, add your email address so visitors can use your email link.
 
 In **Profile & settings → Contact form · EmailJS**, enter your public key, service ID and template ID. Never enter an EmailJS private key or your GitHub token in these fields; site settings are public.
 

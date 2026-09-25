@@ -1,17 +1,17 @@
 [
   {
-    "value": "12",
-    "label": "Certificates Earned",
+    "value": "0",
+    "label": "Projects",
     "color": "indigo"
   },
   {
-    "value": "2",
-    "label": "Projects",
+    "value": "0",
+    "label": "Certifications",
     "color": "pink"
   },
   {
-    "value": "0.2 years",
-    "label": "Experience",
+    "value": "0",
+    "label": "Years of experience",
     "color": "amber"
   }
 ]

@@ -1,32 +1,12 @@
 [
   {
-    "id": "edu-1",
-    "school": "St. Mary's Integrated Campus",
-    "degree": "B.Tech",
-    "fieldOfStudy": "Computer Science and Engineering",
-    "startYear": "2023",
-    "endYear": "2027",
-    "status": "ongoing",
-    "grade": "7.22"
-  },
-  {
-    "id": "edu-1784208150757",
-    "school": "Gouthami junior college Nalgonda",
-    "degree": "Intermediate(10+2)",
-    "fieldOfStudy": "MPC",
-    "startYear": "2021",
-    "endYear": "2023",
-    "status": "completed",
-    "grade": "91.5"
-  },
-  {
-    "id": "edu-1784208234429",
-    "school": "SRI VISWASANTHI EDUCATIONAL INSTITUTIONS",
-    "degree": "CBSE secondary school examination",
-    "fieldOfStudy": "",
+    "id": "education-example",
+    "school": "Your school or university",
+    "degree": "Your degree",
+    "fieldOfStudy": "Your field of study",
     "startYear": "",
-    "endYear": "2021",
-    "status": "completed",
-    "grade": "86.4"
+    "endYear": "",
+    "status": "ongoing",
+    "grade": ""
   }
 ]

@@ -1,6 +1,6 @@
 /* Shared by the portfolio and its editor. No credentials belong in this file. */
 window.PortfolioAppearance = (() => {
-    const defaults = { theme: 'light', accent: '#6366f1', secondary: '#ec4899', highlight: '#f59e0b', photo: 'assets/img/PIC.png', photoPosition: 50 };
+    const defaults = { theme: 'light', accent: '#6366f1', secondary: '#ec4899', highlight: '#f59e0b', photo: 'assets/img/profile-placeholder.svg', photoPosition: 50 };
     function normalize(value = {}) {
         const result = { ...defaults, ...value };
         result.theme = ['light', 'dark', 'system'].includes(result.theme) ? result.theme : 'light';

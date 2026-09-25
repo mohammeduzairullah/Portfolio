@@ -1,29 +1,11 @@
 [
   {
-    "id": "exp-1",
+    "id": "project-example",
     "type": "project",
-    "title": "Pumpkin Patch international Pre-School Website",
-    "subtitle": "Frontend Development, Project Manager",
-    "description": "Developed to gain hands-on experience with frontend development and website deployment, providing technical insight that complements my transition toward IT Project Management.",
-    "tags": "HTML • CSS • JavaScript • Cloudflare • Domain Management • Web Hosting • Google Sheets • Google Word • MS-Excel",
-    "links": [
-      {
-        "label": "View Repo",
-        "url": "https://github.com/mohammeduzairullah/Pumpkin-Patch-international-Pre-School-Website"
-      },
-      {
-        "label": "View Live Site",
-        "url": "https://www.pumpkinpatchintpreschool.com"
-      }
-    ]
-  },
-  {
-    "id": "exp-1788262591224",
-    "type": "internship",
-    "title": "Safalta Setu",
-    "subtitle": "Project Manager",
-    "description": "Ongoing. Will end on 15/11/2026",
-    "tags": "",
+    "title": "Your project title",
+    "subtitle": "Your role",
+    "description": "Describe the problem, your contribution, and the outcome. Add your own project links in the editor.",
+    "tags": "Your tools • Your skills",
     "links": []
   }
 ]
