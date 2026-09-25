@@ -1,16 +1,16 @@
 [
   {
-    "value": "0",
+    "value": "2",
     "label": "Projects",
     "color": "indigo"
   },
   {
-    "value": "0",
+    "value": "12",
     "label": "Certifications",
     "color": "pink"
   },
   {
-    "value": "0",
+    "value": "0.2",
     "label": "Years of experience",
     "color": "amber"
   }
