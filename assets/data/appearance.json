@@ -1,8 +1,8 @@
 {
   "theme": "light",
-  "accent": "#6366f1",
-  "secondary": "#ec4899",
-  "highlight": "#f59e0b",
+  "accent": "#0369a1",
+  "secondary": "#0f766e",
+  "highlight": "#38bdf8",
   "photo": "assets/img/profile-placeholder.svg",
   "photoPosition": 50
 }
