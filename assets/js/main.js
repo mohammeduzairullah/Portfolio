@@ -308,7 +308,10 @@ function initInteractions() {
                 await emailjs.sendForm(config.serviceId, config.templateId, contactForm, { publicKey: config.publicKey });
                 showToast('Message sent — thank you!');
                 contactForm.reset();
-            } catch { showToast('Message could not be sent. Please use the contact links.'); }
+            } catch (error) {
+    console.error('EmailJS failed:', error.status, error.text, error);
+    showToast(error.text || 'Message could not be sent.');
+}
             finally { button.disabled = false; button.textContent = 'Send Message'; }
         });
     }
