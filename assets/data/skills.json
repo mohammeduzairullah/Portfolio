@@ -1,66 +1,110 @@
 [
   {
-    "category": "Project & Product Management",
+    "category": "Technical & Programming",
     "items": [
-      "Agile Methodology",
-      "Scrum",
-      "Jira",
-      "Confluence",
-      "Product Strategy",
-      "Product Management",
-      "Planning",
-      "Requirements Gathering",
-      "Stakeholder Management",
-      "Risk Management"
+      "C Programming",
+      "C++ Programming",
+      "Python",
+      "Node.js",
+      "Flutter",
+      "Frontend development",
+      "Backend development",
+      "Database Management System (DBMS)",
+      "Data Structures",
+      "Object Oriented Programming (OOP)",
+      "Operating Systems",
+      "Computer Networks",
+      "DevOps",
+      "Artificial intelligence"
     ]
   },
   {
-    "category": "Tools & Collaboration Platforms",
+    "category": "Product & Project Management",
     "items": [
+      "Product Management",
+      "Product Strategy",
+      "Project Management",
+      "Agile Methodology",
+      "Scrum",
+      "Software Development Life Cycle (SDLC)",
+      "Requirements Gathering",
+      "Planning",
+      "Stakeholder Management",
+      "Risk Management",
+      "Risk Assessment"
+    ]
+  },
+  {
+    "category": "Productivity & Collaboration Tools",
+    "items": [
+      "MS-Excel",
+      "MS-Word",
+      "MS-Office",
+      "MS-PowerPoint",
+      "Microsoft 365",
+      "Microsoft Project",
+      "Google Docs",
+      "Google Sheets",
+      "Google Forms",
+      "Google Workspace",
       "Asana",
       "Trello",
       "Notion",
       "Miro",
       "Microsoft Teams",
       "Slack",
-      "MS-Excel",
-      "MS-Office",
-      "MS-PowerPoint",
-      "Google Docs",
-      "Google Forms",
-      "Google Sheets",
-      "Google Workspace"
+      "Jira",
+      "Confluence"
     ]
   },
   {
-    "category": "Technical & Design Skills",
+    "category": "AI & Research Tools",
     "items": [
-      "Figma",
-      "Artificial Intelligence",
-      "Prompt Engineering",
       "ChatGPT",
+      "Perplexity",
+      "Gemini",
       "Claude",
-      "Data Annotation",
+      "Prompt Engineering",
       "Research and Analytics"
     ]
   },
   {
-    "category": "Professional & Interpersonal Skills",
+    "category": "Soft Skills & Management",
     "items": [
       "Team Management",
       "Collaboration",
       "Analytical Thinking",
+      "Critical thinking",
       "Time Management",
       "Effective Communication",
-      "Presentation Skills",
-      "Management",
-      "Interpersonal Skills",
-      "English Proficiency (Spoken)",
-      "English Proficiency (Written)"
+      "Presentation skills",
+      "Management"
     ]
   },
   {
-    "category": "Marketing & Business Growth",
+    "category": "Languages & Communication",
+    "items": [
+      "English Proficiency (Spoken)",
+      "English Proficiency (Written)",
+      "Telugu Proficiency (Spoken)",
+      "Telugu Proficiency (Written)"
+    ]
+  },
+  {
+    "category": "Core Engineering & Science",
+    "items": [
+      "Mathematics",
+      "Chemistry",
+      "Physics",
+      "AutoCAD",
+      "Engineering Drawing",
+      "Digital Electronics",
+      "Data Visualization",
+      "Data Analytics"
+    ]
+  },
+  {
+    "category": "Marketing & Networking",
     "items": [
       "Social Media Marketing",
       "Lead Generation",
