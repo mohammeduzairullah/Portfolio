@@ -25,5 +25,41 @@
     "description": "Led cross-functional teams and managed a portfolio of project managers, overseeing end-to-end project tracking, rigorous quality assurance standards, strategic market research, and seamless deployments.",
     "tags": "Google Sheets • Google Docs • MS-Excel • Team Management • Collaboration • Analytical Thinking • Critical Thinking • Time Management • Effective Communication • Presentation Skills • Management",
     "links": []
+  },
+  {
+    "id": "exp-1792227320862",
+    "type": "project",
+    "title": "MS5-Hospital-Management-system",
+    "subtitle": "Cse student",
+    "description": "MS5 - Hospital Management system | MERN 4th year mini-project | Btech CSE",
+    "tags": "HTML • CSS • JavaScript • React.js • Node.js • Express.js • MongoDB • Mongoose • REST APIs • CRUD Operations • JWT Authentication • Role-Based Access Control • Input Validation • Database Design • PDF Generation • Data Visualization • Automated Testing • Vite • Render Deployment • MongoDB Atlas",
+    "links": [
+      {
+        "label": "View Repo ",
+        "url": "https://github.com/mohammeduzairullah/MS5-Hospital-Management-system"
+      },
+      {
+        "label": "View Live Site",
+        "url": "https://ms5-careflow-demo.onrender.com/"
+      }
+    ]
+  },
+  {
+    "id": "exp-1792227495397",
+    "type": "project",
+    "title": "Random-Code-Generator",
+    "subtitle": "Cse student",
+    "description": "2nd year mini-project | Btech CSE\nA simple frontend college mini-project built with HTML and CSS\n",
+    "tags": "HTML • CSS • JavaScript",
+    "links": [
+      {
+        "label": "View Repo ",
+        "url": "https://github.com/mohammeduzairullah/Random-Quote-Generator"
+      },
+      {
+        "label": "View Live Site",
+        "url": "https://mohammeduzairullah.github.io/Random-Quote-Generator/"
+      }
+    ]
   }
 ]
