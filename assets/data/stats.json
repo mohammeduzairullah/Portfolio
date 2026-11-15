@@ -18,5 +18,10 @@
     "value": "0.4",
     "label": "Internship Experience (year)",
     "color": "amber"
+  },
+  {
+    "value": "0",
+    "label": "Work Experience",
+    "color": "violet"
   }
 ]
