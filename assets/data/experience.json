@@ -1,7 +1,7 @@
 [
   {
     "id": "project-example",
-    "type": "project",
+    "type": "internship",
     "title": "Pumpkin Patch international Pre-School Website",
     "subtitle": "Frontend Development, Project Manager (1 months)",
     "description": "Developed to gain hands-on experience with frontend development and website deployment, providing technical insight that complements my transition toward IT Project Management.",
@@ -24,7 +24,16 @@
     "subtitle": "Project manager (4 months)",
     "description": "Led cross-functional teams and managed a portfolio of project managers, overseeing end-to-end project tracking, rigorous quality assurance standards, strategic market research, and seamless deployments.",
     "tags": "Google Sheets • Google Docs • MS-Excel • Team Management • Collaboration • Analytical Thinking • Critical Thinking • Time Management • Effective Communication • Presentation Skills • Management",
-    "links": []
+    "links": [
+      {
+        "label": "View LOR",
+        "url": "https://drive.google.com/file/d/1hiduCUPzDzZy2Khv5A9NjEq2GS-9GC0F/view?usp=drive_link"
+      },
+      {
+        "label": "Certificate",
+        "url": "https://drive.google.com/file/d/1reFIl_vEkFDQ---esy5ZPp0W5i3AqyOR/view?usp=drive_link"
+      }
+    ]
   },
   {
     "id": "exp-1792227320862",
