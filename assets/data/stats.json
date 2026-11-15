@@ -1,6 +1,6 @@
 [
   {
-    "value": "2",
+    "value": "3",
     "label": "Projects",
     "color": "indigo"
   },
@@ -10,8 +10,13 @@
     "color": "pink"
   },
   {
-    "value": "0.5",
-    "label": "Years of experience",
+    "value": "1",
+    "label": "Internships",
+    "color": "amber"
+  },
+  {
+    "value": "0.4",
+    "label": "Internship Experience (year)",
     "color": "amber"
   }
 ]
